@@ -1,0 +1,15 @@
+version: '1'
+services:
+    demoapp:
+        container_name: demoapplication
+        restart: always
+        build: .
+        ports: 
+            - '80:8000'
+        links:
+            - mongo
+    mongo:
+        container_name: mongo
+        image: mongo
+        ports: 
+            - '27017:27017'
